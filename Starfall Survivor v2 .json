@@ -1,0 +1,314 @@
+{
+  "firstLayout": "",
+  "gdVersion": {
+    "build": 269,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": true,
+    "orientation": "landscape",
+    "packageName": "com.example.gamename",
+    "pixelsRounding": false,
+    "projectUuid": "3acd3798-d8ad-49a5-bf15-1854bbef3784",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "adaptWidth",
+    "templateSlug": "",
+    "useDeprecatedZeroAsDefaultStringVariable": true,
+    "version": "1.0.0",
+    "name": "Starfall Survivor v2 ",
+    "description": "",
+    "author": "",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {
+      "android-icon-144": "",
+      "android-icon-192": "",
+      "android-icon-36": "",
+      "android-icon-48": "",
+      "android-icon-72": "",
+      "android-icon-96": "",
+      "android-windowSplashScreenAnimatedIcon": "",
+      "desktop-icon-512": "",
+      "ios-icon-100": "",
+      "ios-icon-1024": "",
+      "ios-icon-114": "",
+      "ios-icon-120": "",
+      "ios-icon-144": "",
+      "ios-icon-152": "",
+      "ios-icon-167": "",
+      "ios-icon-180": "",
+      "ios-icon-20": "",
+      "ios-icon-29": "",
+      "ios-icon-40": "",
+      "ios-icon-50": "",
+      "ios-icon-57": "",
+      "ios-icon-58": "",
+      "ios-icon-60": "",
+      "ios-icon-72": "",
+      "ios-icon-76": "",
+      "ios-icon-80": "",
+      "ios-icon-87": ""
+    },
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 1.5,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": true
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [
+      "mobile"
+    ],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "assets/ChatGPT Image 2026年3月21日 上午11_59_39.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ChatGPT Image 2026年3月21日 上午11_59_39.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/535a92cd4cdb0fdc4ede0e11c23b4dca411dd4a7069c96b0c0b95f6efd95e5bb-ChatGPT Image 2026年3月21日 上午11_59_39.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/ship.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ship.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/9954e8ca2b7b6d75df553fac11fc9485fdd37e555456461b91c17cba08e7de67-ship.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/ship_bullet.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ship_bullet.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/6bc4de4cb5ca05c7719770e4b9fca5b3dec24c58364c9283cc286a51e8b9832a-ship_bullet.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/larg_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "larg_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/48e084798018bb9d211fc07e6b4514f36b26c756959da3521b17850154da2f5b-larg_asteroid_1.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/larg_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "larg_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/690faa573dddbf6a87e46047477cf7be329f9d7e755b070049fce74c67278f6b-larg_asteroid_2.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/larg_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "larg_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/42004446396e95b7412e46166c6d1b5bae4ae6f7e08762fc3e44b61444db1b11-larg_asteroid_3.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/medium_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "medium_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/ced72ccb8c46c4862827eb8339332b1acecf1cf509b6a738b751b0216fb94ae3-medium_asteroid_1.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/medium_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "medium_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/7c56eca44510266386c30320732bf44c5ff488b6b33bd6e4daeeb46493fd3e2d-medium_asteroid_2.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/medium_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "medium_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/777a89eb12927e216feddb11cf82491484ec49aab509ebfee71b7b579f9e02b3-medium_asteroid_3.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/small_asteroid_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "small_asteroid_1.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/0bbd116b176d8fc4b3d75de48807fcb9dc4435e45890803d5963a198d1a086d8-small_asteroid_1.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/small_asteroid_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "small_asteroid_2.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/00caabb63359d47fea89df6c0358f9beed6e04dc4db9257f468ef94ffe6cce5e-small_asteroid_2.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/small_asteroid_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "small_asteroid_3.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/ccaa33068fe418cf7984748e7778717ca6b5ee7a7b2b13df4a01fb3dcb5651fb-small_asteroid_3.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/Gemini_Generated_Image_euly7feuly7feuly.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gemini_Generated_Image_euly7feuly7feuly.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/97f4017a693b31def711c4c79f1506d24794f50c0c7cd80115d449b8dbb97c11-Gemini_Generated_Image_euly7feuly7feuly.png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/Gemini_Generated_Image_b4ma4wb4ma4wb4ma (1).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gemini_Generated_Image_b4ma4wb4ma4wb4ma (1).png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/27247e814f192a7eb3b6e5a209c9d70515c1a84c15b72fab50de74127b1ec8e5-Gemini_Generated_Image_b4ma4wb4ma4wb4ma (1).png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "assets/Gemini_Generated_Image_qus2h2qus2h2qus2 (1).png.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Gemini_Generated_Image_qus2h2qus2h2qus2 (1).png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://project-resources.gdevelop.io/afbe8b9b-63f6-41cf-88d6-f5224e42e034/resources/5f5955c6e29c021a9e473792cd567a2a6b0ddcde8b5aae713cba602505a0d314-Gemini_Generated_Image_qus2h2qus2h2qus2 (1).png",
+          "name": "cloud-project-resource"
+        }
+      },
+      {
+        "file": "Monster (Level 1).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Monster (Level 1).png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Monster (Level 2).png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Monster (Level 2).png",
+        "smoothed": true,
+        "userAdded": false
+      }
+    ]
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/level-1"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/gameover"
+    }
+  ],
+  "externalEvents": [],
+  "eventsFunctionsExtensions": [],
+  "externalLayouts": []
+}
