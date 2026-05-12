@@ -20,13 +20,13 @@
     "templateSlug": "",
     "useDeprecatedZeroAsDefaultStringVariable": true,
     "version": "1.0.0",
-    "name": "Starfall Survivor v2",
+    "name": "Starfall Survivor v2 ",
     "description": "",
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
     "latestCompilationDirectory": "",
-    "maxFPS": 0,
+    "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
     "platformSpecificAssets": {
@@ -289,126 +289,6 @@
         "name": "Monster (Level 2).png",
         "smoothed": true,
         "userAdded": false
-      },
-      {
-        "file": "PlayerShipSprite.png",
-        "kind": "image",
-        "metadata": "{\"localFilePath\":\"PlayerShipSprite.png\",\"extension\":\".png\"}",
-        "name": "PlayerShipSprite.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "Bullet1.png",
-        "kind": "image",
-        "metadata": "{\"localFilePath\":\"Bullet1.png\",\"extension\":\".png\"}",
-        "name": "Bullet1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "Bullet1 - Copy.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Bullet1 - Copy.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/Bullet1.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "Bullet1",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "AsteroidLarge.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "AsteroidLarge.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "AsteroidMedium.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "AsteroidMedium.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "AsteroidSmall.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "AsteroidSmall.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "PlayerDeath1.png",
-        "kind": "image",
-        "metadata": "{\"localFilePath\":\"PlayerDeath1.png\",\"extension\":\".png\"}",
-        "name": "PlayerDeath1.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "PlayerDeath2.png",
-        "kind": "image",
-        "metadata": "{\"localFilePath\":\"PlayerDeath2.png\",\"extension\":\".png\"}",
-        "name": "PlayerDeath2.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "PlayerDeath3.png",
-        "kind": "image",
-        "metadata": "{\"localFilePath\":\"PlayerDeath3.png\",\"extension\":\".png\"}",
-        "name": "PlayerDeath3.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "PlayerDeath4.png",
-        "kind": "image",
-        "metadata": "{\"localFilePath\":\"PlayerDeath4.png\",\"extension\":\".png\"}",
-        "name": "PlayerDeath4.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/PlayerDeath1.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "PlayerDeath1",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/PlayerDeath2.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "PlayerDeath2",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/PlayerDeath3.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "PlayerDeath3",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/PlayerDeath4.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\".png\"}",
-        "name": "PlayerDeath4",
-        "smoothed": true,
-        "userAdded": false
       }
     ]
   },
@@ -429,15 +309,6 @@
     }
   ],
   "externalEvents": [],
-  "eventsFunctionsExtensions": [
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/speedrestrictions"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/eventsFunctionsExtensions/flash"
-    }
-  ],
+  "eventsFunctionsExtensions": [],
   "externalLayouts": []
 }

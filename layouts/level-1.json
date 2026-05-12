@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.6244537826599994,
+    "zoomFactor": 0.6040838749988874,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -44,6 +44,11 @@
     },
     {
       "name": "SpawnSide",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EnemyHealth",
       "type": "number",
       "value": 0
     }
@@ -72,60 +77,12 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "PlayerShip",
-      "persistentUuid": "87e20fc9-258b-4923-8c69-607ef2281bd6",
-      "width": 0,
-      "x": 637,
-      "y": 387,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "name": "Lives",
-      "persistentUuid": "f4c7e55d-e23a-44a1-a1d1-273c6d4cc7fc",
-      "width": 0,
-      "x": 12,
-      "y": 9,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
       "name": "Left_or_Right_Click",
       "persistentUuid": "ab5e75d9-2631-4d4b-bd70-2cca8053f329",
       "width": 0,
-      "x": 1114,
-      "y": 15,
-      "zOrder": 4,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
-      "name": "PowerText",
-      "persistentUuid": "087e5cc3-f15d-48ff-b7bd-62bd104d0500",
-      "width": 0,
-      "x": 917,
-      "y": 15,
-      "zOrder": 5,
+      "x": 1032,
+      "y": 12,
+      "zOrder": 150,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -139,10 +96,60 @@
       "layer": "",
       "name": "power_text_",
       "persistentUuid": "a0540896-7667-47e7-867b-818827d545ea",
-      "width": 141,
-      "x": 1123,
-      "y": 50,
-      "zOrder": 6,
+      "width": 165,
+      "x": 1077,
+      "y": 47,
+      "zOrder": 150,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 52,
+      "keepRatio": true,
+      "layer": "",
+      "name": "PlayerShip",
+      "persistentUuid": "fe7d6e3e-0a77-494b-ad17-f485ed8e7bbb",
+      "width": 55,
+      "x": 650,
+      "y": 350,
+      "zOrder": 150,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 2.34375,
+      "height": 29,
+      "layer": "",
+      "name": "Charge_Bar",
+      "persistentUuid": "6b78412f-1d62-4617-a787-bda87e46c42b",
+      "width": 150,
+      "x": 868,
+      "y": 10,
+      "zOrder": 150,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 64,
+      "height": 20,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Health_Bar",
+      "persistentUuid": "c95c44db-d231-4fbe-82f6-38fc8c3c6fd8",
+      "width": 58,
+      "x": 19,
+      "y": 12,
+      "zOrder": 151,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -211,49 +218,97 @@
       ]
     },
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "PlayerShip",
       "persistentUuid": "9bb813b1-ab82-47de-92b2-6978ffefc015",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "MouseX",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MouseY",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "MaxMovementSpeed_Physics",
+          "type": "SpeedRestrictions::MaxMovementSpeed_Physics",
+          "PhysicsBehavior": "Physics2",
+          "MaximumSpeed": 200
+        },
+        {
+          "name": "MaxRotationSpeed_Physics",
+          "type": "SpeedRestrictions::MaxRotationSpeed_Physics",
+          "PhysicsBehavior": "Physics2",
+          "MaximumRotationSpeed": 600
+        },
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Box",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 1,
+          "angularDamping": 1,
+          "gravityScale": 0,
+          "layers": 1,
+          "masks": 1
+        }
+      ],
       "animations": [
         {
-          "name": "",
+          "name": "PlayerShipSprite",
           "useMultipleDirections": false,
           "directions": [
             {
               "looping": false,
+              "metadata": "{\"pskl\":{}}",
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "ship.png",
+                  "image": "PlayerShipSprite",
                   "points": [
                     {
                       "name": "Cannon",
-                      "x": 30,
-                      "y": 16
+                      "x": 975.5,
+                      "y": 498.5
                     },
                     {
                       "name": "Ha",
-                      "x": 30,
-                      "y": 108
+                      "x": 530,
+                      "y": 502.5
                     }
                   ],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 531,
+                    "y": 501
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 532.5,
+                    "y": 501
                   },
                   "customCollisionMask": [
                     [
@@ -262,16 +317,217 @@
                         "y": 0
                       },
                       {
-                        "x": 32,
-                        "y": 0
+                        "x": 1024,
+                        "y": 2
                       },
                       {
-                        "x": 32,
-                        "y": 32
+                        "x": 1024,
+                        "y": 1024
                       },
                       {
                         "x": 0,
-                        "y": 32
+                        "y": 1024
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PlayerDeath",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "PlayerDeath5",
+                  "points": [
+                    {
+                      "name": "Cannon",
+                      "x": 296,
+                      "y": 183.5
+                    },
+                    {
+                      "name": "Ha",
+                      "x": 161.5,
+                      "y": 182.5
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 162,
+                    "y": 182.5
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 161,
+                    "y": 182.5
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 2
+                      },
+                      {
+                        "x": 1024,
+                        "y": 1024
+                      },
+                      {
+                        "x": 0,
+                        "y": 1024
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "PlayerDeath6",
+                  "points": [
+                    {
+                      "name": "Cannon",
+                      "x": 296,
+                      "y": 183.5
+                    },
+                    {
+                      "name": "Ha",
+                      "x": 161.5,
+                      "y": 182.5
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 162,
+                    "y": 182.5
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 161,
+                    "y": 182.5
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 2
+                      },
+                      {
+                        "x": 1024,
+                        "y": 1024
+                      },
+                      {
+                        "x": 0,
+                        "y": 1024
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "PlayerDeath7",
+                  "points": [
+                    {
+                      "name": "Cannon",
+                      "x": 296,
+                      "y": 183.5
+                    },
+                    {
+                      "name": "Ha",
+                      "x": 161.5,
+                      "y": 182.5
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 162,
+                    "y": 182.5
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 161,
+                    "y": 182.5
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 2
+                      },
+                      {
+                        "x": 1024,
+                        "y": 1024
+                      },
+                      {
+                        "x": 0,
+                        "y": 1024
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "PlayerDeath8",
+                  "points": [
+                    {
+                      "name": "Cannon",
+                      "x": 296,
+                      "y": 183.5
+                    },
+                    {
+                      "name": "Ha",
+                      "x": 161.5,
+                      "y": 182.5
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 162,
+                    "y": 182.5
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 161,
+                    "y": 182.5
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1024,
+                        "y": 2
+                      },
+                      {
+                        "x": 1024,
+                        "y": 1024
+                      },
+                      {
+                        "x": 0,
+                        "y": 1024
                       }
                     ]
                   ]
@@ -294,45 +550,46 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "Bullet1",
           "useMultipleDirections": false,
           "directions": [
             {
               "looping": false,
+              "metadata": "{\"pskl\":{}}",
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "ship_bullet.png",
+                  "image": "Bullet2",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 66.5,
+                    "y": 22
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 66.5,
+                    "y": 22
                   },
                   "customCollisionMask": [
                     [
                       {
-                        "x": 0,
-                        "y": 0
+                        "x": 20,
+                        "y": 46
                       },
                       {
-                        "x": 5,
-                        "y": 0
+                        "x": 102,
+                        "y": 46
                       },
                       {
-                        "x": 5,
-                        "y": 2
+                        "x": 102,
+                        "y": 67
                       },
                       {
-                        "x": 0,
-                        "y": 2
+                        "x": 20,
+                        "y": 67
                       }
                     ]
                   ]
@@ -355,13 +612,18 @@
           "name": "HP",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "hitfresh",
+          "type": "number",
+          "value": 0
         }
       ],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "normal",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -370,7 +632,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "larg_asteroid_1.png",
+                  "image": "AsteroidLarge.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -386,20 +648,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 4,
-                        "y": 16
+                        "x": 14,
+                        "y": 12
                       },
                       {
-                        "x": 89,
-                        "y": 16
+                        "x": 334,
+                        "y": 12
                       },
                       {
-                        "x": 89,
-                        "y": 91
+                        "x": 334,
+                        "y": 319
                       },
                       {
-                        "x": 4,
-                        "y": 91
+                        "x": 14,
+                        "y": 319
                       }
                     ]
                   ]
@@ -409,7 +671,7 @@
           ]
         },
         {
-          "name": "",
+          "name": "hitfresh",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -418,7 +680,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "larg_asteroid_2.png",
+                  "image": "hit effect asteroids (large).png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -434,68 +696,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 4,
-                        "y": 16
+                        "x": 14,
+                        "y": 12
                       },
                       {
-                        "x": 89,
-                        "y": 16
+                        "x": 334,
+                        "y": 12
                       },
                       {
-                        "x": 89,
-                        "y": 91
+                        "x": 334,
+                        "y": 319
                       },
                       {
-                        "x": 4,
-                        "y": 91
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "larg_asteroid_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 4,
-                        "y": 16
-                      },
-                      {
-                        "x": 89,
-                        "y": 16
-                      },
-                      {
-                        "x": 89,
-                        "y": 91
-                      },
-                      {
-                        "x": 4,
-                        "y": 91
+                        "x": 14,
+                        "y": 319
                       }
                     ]
                   ]
@@ -524,7 +738,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "normal",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -533,7 +747,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "medium_asteroid_1.png",
+                  "image": "AsteroidMedium.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -549,20 +763,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 6,
-                        "y": 5
+                        "x": 18,
+                        "y": 23
                       },
                       {
-                        "x": 58,
-                        "y": 5
+                        "x": 228,
+                        "y": 23
                       },
                       {
-                        "x": 58,
-                        "y": 61
+                        "x": 228,
+                        "y": 222
                       },
                       {
-                        "x": 6,
-                        "y": 61
+                        "x": 18,
+                        "y": 222
                       }
                     ]
                   ]
@@ -572,7 +786,7 @@
           ]
         },
         {
-          "name": "",
+          "name": "hitfresh",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -581,7 +795,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "medium_asteroid_2.png",
+                  "image": "hit effect asteroids (medium).png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -597,68 +811,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 6,
-                        "y": 5
+                        "x": 18,
+                        "y": 23
                       },
                       {
-                        "x": 58,
-                        "y": 5
+                        "x": 228,
+                        "y": 23
                       },
                       {
-                        "x": 58,
-                        "y": 61
+                        "x": 228,
+                        "y": 222
                       },
                       {
-                        "x": 6,
-                        "y": 61
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "medium_asteroid_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 6,
-                        "y": 5
-                      },
-                      {
-                        "x": 58,
-                        "y": 5
-                      },
-                      {
-                        "x": 58,
-                        "y": 61
-                      },
-                      {
-                        "x": 6,
-                        "y": 61
+                        "x": 18,
+                        "y": 222
                       }
                     ]
                   ]
@@ -696,7 +862,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
-                  "image": "small_asteroid_1.png",
+                  "image": "AsteroidSmall.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -712,116 +878,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 2,
-                        "y": 2
+                        "x": 19,
+                        "y": 17
                       },
                       {
-                        "x": 30,
-                        "y": 2
+                        "x": 129,
+                        "y": 17
                       },
                       {
-                        "x": 30,
-                        "y": 31
+                        "x": 129,
+                        "y": 112
                       },
                       {
-                        "x": 2,
-                        "y": 31
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "small_asteroid_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 2
-                      },
-                      {
-                        "x": 30,
-                        "y": 2
-                      },
-                      {
-                        "x": 30,
-                        "y": 31
-                      },
-                      {
-                        "x": 2,
-                        "y": 31
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "small_asteroid_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 2,
-                        "y": 2
-                      },
-                      {
-                        "x": 30,
-                        "y": 2
-                      },
-                      {
-                        "x": 30,
-                        "y": 31
-                      },
-                      {
-                        "x": 2,
-                        "y": 31
+                        "x": 19,
+                        "y": 112
                       }
                     ]
                   ]
@@ -994,7 +1064,7 @@
       "effects": [],
       "behaviors": [],
       "string": "Left or Right Click",
-      "font": "",
+      "font": "758a5ad5d3131fef02a270e9ab7ab030db457b06730add8a0b31581a76b93470_Silkscreen-Regular.ttf",
       "textAlignment": "left",
       "characterSize": 20,
       "color": {
@@ -1017,7 +1087,7 @@
         "smoothed": true,
         "underlined": false,
         "text": "Left or Right Click",
-        "font": "",
+        "font": "758a5ad5d3131fef02a270e9ab7ab030db457b06730add8a0b31581a76b93470_Silkscreen-Regular.ttf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 20,
@@ -1144,7 +1214,7 @@
       "effects": [],
       "behaviors": [],
       "string": "Press F for power shoot",
-      "font": "",
+      "font": "758a5ad5d3131fef02a270e9ab7ab030db457b06730add8a0b31581a76b93470_Silkscreen-Regular.ttf",
       "textAlignment": "left",
       "characterSize": 20,
       "color": {
@@ -1167,7 +1237,7 @@
         "smoothed": true,
         "underlined": false,
         "text": "Press F for power shoot",
-        "font": "",
+        "font": "758a5ad5d3131fef02a270e9ab7ab030db457b06730add8a0b31581a76b93470_Silkscreen-Regular.ttf",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
         "characterSize": 20,
@@ -1179,11 +1249,17 @@
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
       "name": "Monster__level_1_",
+      "persistentUuid": "7f5c1128-a81b-46cd-a866-3bb127418d8f",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [
         {
           "name": "HP",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Stun",
           "type": "number",
           "value": 0
         }
@@ -1192,7 +1268,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "Normal",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1202,6 +1278,54 @@
                 {
                   "hasCustomCollisionMask": true,
                   "image": "Monster (Level 1).png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 350,
+                        "y": 119
+                      },
+                      {
+                        "x": 674,
+                        "y": 119
+                      },
+                      {
+                        "x": 674,
+                        "y": 426
+                      },
+                      {
+                        "x": 350,
+                        "y": 426
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "HitFlash",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Monster (Level 1) (2).png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1252,13 +1376,23 @@
           "name": "HP",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "Stop",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Stun",
+          "type": "number",
+          "value": 0
         }
       ],
       "effects": [],
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "Normal2",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -1304,8 +1438,93 @@
               ]
             }
           ]
+        },
+        {
+          "name": "HitFlash2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Monster (Level 2) (2).png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 145,
+                        "y": 60
+                      },
+                      {
+                        "x": 759,
+                        "y": 60
+                      },
+                      {
+                        "x": 759,
+                        "y": 524
+                      },
+                      {
+                        "x": 145,
+                        "y": 524
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
+    },
+    {
+      "assetStoreId": "9d8547ebacac80df5a7eb277004089582397b80b257befeea8c652a3da2d84d6",
+      "name": "Charge_Bar",
+      "persistentUuid": "0527c763-1acb-44d8-9add-ee6d11309b9a",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variant": "Tiny Square Blue Bar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "InitialValue": 0,
+        "MaxValue": 15,
+        "BarTopPadding": 8,
+        "BarRightPadding": 10,
+        "BarBottomPadding": 8,
+        "BarLeftPadding": 10,
+        "PreviousHighValueDuration": 0,
+        "EasingDuration": 0.25
+      }
+    },
+    {
+      "assetStoreId": "db57d0bcdc074868304ca46431ac85fcef3f613be5fba73ae0adc26ee2c8629b",
+      "name": "Health_Bar",
+      "persistentUuid": "0deff8fa-0baf-4321-83ad-d75d0af3fe45",
+      "type": "TiledUnitsBar::TiledUnitsBar",
+      "variant": "Pixel Heart Bar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "UnitWidth": 16,
+        "HideBackground": true,
+        "ShowBackground": false,
+        "InitialValue": 10,
+        "MaxValue": 10
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1337,6 +1556,12 @@
       },
       {
         "objectName": "Lives"
+      },
+      {
+        "objectName": "Charge_Bar"
+      },
+      {
+        "objectName": "Health_Bar"
       },
       {
         "objectName": "GameOver"
@@ -1491,6 +1716,25 @@
                 "=",
                 "0"
               ]
+            },
+            {
+              "type": {
+                "value": "SetFullScreen"
+              },
+              "parameters": [
+                "",
+                "yes",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetGameResolutionResizeMode"
+              },
+              "parameters": [
+                "",
+                "\"adaptHeight\""
+              ]
             }
           ]
         }
@@ -1502,7 +1746,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "PlayerShip",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1513,26 +1756,175 @@
           "actions": [
             {
               "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Scale",
+                "=",
+                "0.04"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
                 "value": "RotateTowardPosition"
               },
               "parameters": [
                 "PlayerShip",
-                "MouseX()",
-                "MouseY()",
+                "PlayerShip.Variable(MouseX)",
+                "PlayerShip.Variable(MouseY)",
                 "0",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"w\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Physics2::ApplyPolarForce"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Physics2",
+                "270",
+                "1",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"s\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Physics2::ApplyPolarForce"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Physics2",
+                "90",
+                "1",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"a\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Physics2::ApplyPolarForce"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Physics2",
+                "180",
+                "1",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"d\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Physics2::ApplyPolarForce"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Physics2",
+                "0",
+                "1",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "PlayerShip",
+                "MouseX",
+                "=",
+                "CursorX()"
               ]
             },
             {
               "type": {
-                "value": "AddForceTowardPosition"
+                "value": "SetNumberObjectVariable"
               },
               "parameters": [
                 "PlayerShip",
-                "MouseX()",
-                "MouseY()",
-                "120",
-                ""
+                "MouseY",
+                "=",
+                "CursorY()"
               ]
             }
           ]
@@ -1580,6 +1972,17 @@
                 "=",
                 "\"Lives:\"+ ToString(Variable(Lives))"
               ]
+            },
+            {
+              "type": {
+                "value": "TiledUnitsBar::TiledUnitsBar::SetValue"
+              },
+              "parameters": [
+                "Health_Bar",
+                "-",
+                "1",
+                ""
+              ]
             }
           ]
         },
@@ -1625,6 +2028,17 @@
                 "Text",
                 "=",
                 "\"Lives:\"+ ToString(Variable(Lives))"
+              ]
+            },
+            {
+              "type": {
+                "value": "TiledUnitsBar::TiledUnitsBar::SetValue"
+              },
+              "parameters": [
+                "Health_Bar",
+                "-",
+                "1",
+                ""
               ]
             }
           ]
@@ -1672,6 +2086,17 @@
                 "=",
                 "\"Lives:\"+ ToString(Variable(Lives))"
               ]
+            },
+            {
+              "type": {
+                "value": "TiledUnitsBar::TiledUnitsBar::SetValue"
+              },
+              "parameters": [
+                "Health_Bar",
+                "-",
+                "2",
+                ""
+              ]
             }
           ]
         },
@@ -1680,23 +2105,111 @@
           "conditions": [
             {
               "type": {
-                "value": "IsCursorOnObject"
+                "value": "CollisionNP"
               },
               "parameters": [
                 "PlayerShip",
+                "Monster__level_1_",
                 "",
                 "",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "ClearForces"
+                "value": "SetNumberVariable"
               },
               "parameters": [
-                "PlayerShip"
+                "Lives",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Lives",
+                "Text",
+                "=",
+                "\"Lives:\"+ ToString(Variable(Lives))"
+              ]
+            },
+            {
+              "type": {
+                "value": "TiledUnitsBar::TiledUnitsBar::SetValue"
+              },
+              "parameters": [
+                "Health_Bar",
+                "-",
+                "1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Monster__level_2_",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Lives",
+                "-",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Lives",
+                "Text",
+                "=",
+                "\"Lives:\"+ ToString(Variable(Lives))"
+              ]
+            },
+            {
+              "type": {
+                "value": "TiledUnitsBar::TiledUnitsBar::SetValue"
+              },
+              "parameters": [
+                "Health_Bar",
+                "-",
+                "2",
+                ""
               ]
             }
           ]
@@ -1716,6 +2229,36 @@
             }
           ],
           "actions": [
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Scale",
+                "=",
+                "0.15"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "PlayerShip",
+                "Animation",
+                "=",
+                "\"PlayerDeath\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.7"
+              ]
+            },
             {
               "type": {
                 "value": "Scene"
@@ -1808,6 +2351,27 @@
             },
             {
               "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "AsteroidSmall",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "AsteroidSmall",
+                "Scale",
+                "=",
+                "0.3"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberObjectVariable"
               },
               "parameters": [
@@ -1838,6 +2402,27 @@
                 "AsteroidMedium.X()-10",
                 "AsteroidMedium.Y()-10",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "AsteroidSmall",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "AsteroidSmall",
+                "Scale",
+                "=",
+                "0.3"
               ]
             },
             {
@@ -1913,6 +2498,38 @@
             },
             {
               "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "Animation",
+                "=",
+                "\"normal\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "Scale",
+                "=",
+                "0.3"
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberObjectVariable"
               },
               "parameters": [
@@ -1943,6 +2560,27 @@
                 "AsteroidLarge.X()-10",
                 "AsteroidLarge.Y()-10",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "Scale",
+                "=",
+                "0.3"
               ]
             },
             {
@@ -2024,13 +2662,34 @@
             },
             {
               "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
               },
               "parameters": [
                 "AsteroidLarge",
                 "Animation",
                 "=",
-                "Random(2)"
+                "\"normal\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "Scale",
+                "=",
+                "0.3"
               ]
             },
             {
@@ -2135,13 +2794,34 @@
             },
             {
               "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+                "value": "SetZOrder"
               },
               "parameters": [
                 "AsteroidMedium",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidLarge",
                 "Animation",
                 "=",
-                "Random(2)"
+                "\"normal\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "Scale",
+                "=",
+                "0.3"
               ]
             },
             {
@@ -2246,6 +2926,27 @@
             },
             {
               "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "AsteroidSmall",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "AsteroidSmall",
+                "Scale",
+                "=",
+                "0.3"
+              ]
+            },
+            {
+              "type": {
                 "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
               },
               "parameters": [
@@ -2329,7 +3030,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Bullet",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2366,9 +3066,40 @@
               "parameters": [
                 "",
                 "Bullet",
-                "PlayerShip.X(\"Cannon\")",
+                "PlayerShip.X(\"Cannon\") ",
                 "PlayerShip.Y(\"Cannon\")",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "Bullet",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "Bullet",
+                "Scale",
+                "=",
+                "0.2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "Bullet",
+                "=",
+                "AngleBetweenPositions(PlayerShip.X(), PlayerShip.Y(), MouseX(), MouseY())"
               ]
             },
             {
@@ -2377,7 +3108,7 @@
               },
               "parameters": [
                 "Bullet",
-                "PlayerShip.Angle()",
+                "Bullet.Angle()",
                 "400",
                 "1"
               ]
@@ -2395,6 +3126,11 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
@@ -2468,6 +3204,26 @@
                 "-",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "Animation",
+                "=",
+                "\"hitfresh\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "\"HitFlashTimer\""
+              ]
             }
           ]
         },
@@ -2506,6 +3262,26 @@
                 "HP",
                 "-",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "Animation",
+                "=",
+                "\"hitfresh\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "\"HitFlashTimer\""
               ]
             }
           ]
@@ -2546,6 +3322,46 @@
                 "-",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Animation",
+                "=",
+                "\"HitFlash\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"HitFlashTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Stun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"StunTimer\""
+              ]
             }
           ]
         },
@@ -2584,6 +3400,46 @@
                 "HP",
                 "-",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Animation",
+                "=",
+                "\"HitFlash2\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"HitFlashTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Stun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"StunTimer\""
               ]
             }
           ]
@@ -2623,6 +3479,16 @@
                 "PlayerShip.X(\"Cannon\")",
                 "PlayerShip.Y(\"Cannon\")",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "SuperBullet",
+                "=",
+                "3"
               ]
             },
             {
@@ -2743,6 +3609,26 @@
                 "-",
                 "2"
               ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "Animation",
+                "=",
+                "\"hitfresh\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "\"HitFlashTimer\""
+              ]
             }
           ]
         },
@@ -2781,6 +3667,26 @@
                 "HP",
                 "-",
                 "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "Animation",
+                "=",
+                "\"hitfresh\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "\"HitFlashTimer\""
               ]
             }
           ]
@@ -2821,6 +3727,46 @@
                 "-",
                 "2"
               ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Animation",
+                "=",
+                "\"HitFlash\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"HitFlashTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Stun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"StunTimer\""
+              ]
             }
           ]
         },
@@ -2859,6 +3805,46 @@
                 "HP",
                 "-",
                 "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Animation",
+                "=",
+                "\"HitFlash2\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"HitFlashTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Stun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"StunTimer\""
               ]
             }
           ]
@@ -2877,12 +3863,11 @@
             },
             {
               "type": {
-                "value": "NumberVariable"
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::IsFull"
               },
               "parameters": [
-                "PowerReady",
-                "=",
-                "1"
+                "Charge_Bar",
+                ""
               ]
             },
             {
@@ -2900,9 +3885,19 @@
               "parameters": [
                 "",
                 "Power",
-                "PlayerShip.X(\"Cannon\")",
-                "PlayerShip.Y(\"Cannon\")",
+                "PlayerShip.X(\"Cannon\")-50",
+                "PlayerShip.Y(\"Cannon\")-50",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetZOrder"
+              },
+              "parameters": [
+                "Power",
+                "=",
+                "3"
               ]
             },
             {
@@ -2965,6 +3960,17 @@
                 "=",
                 "0"
               ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "Charge_Bar",
+                "=",
+                "0",
+                ""
+              ]
             }
           ]
         },
@@ -3025,6 +4031,26 @@
                 "-",
                 "3"
               ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "Animation",
+                "=",
+                "\"hitfresh\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "\"HitFlashTimer\""
+              ]
             }
           ]
         },
@@ -3055,6 +4081,26 @@
                 "-",
                 "3"
               ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "Animation",
+                "=",
+                "\"hitfresh\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "\"HitFlashTimer\""
+              ]
             }
           ]
         },
@@ -3084,6 +4130,46 @@
                 "HP",
                 "-",
                 "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Animation",
+                "=",
+                "\"HitFlash\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"HitFlashTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Stun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"StunTimer\""
               ]
             }
           ]
@@ -3114,6 +4200,46 @@
                 "HP",
                 "-",
                 "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Animation",
+                "=",
+                "\"HitFlash2\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"HitFlashTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Stun",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"StunTimer\""
               ]
             }
           ]
@@ -3194,6 +4320,151 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "HP",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "Charge_Bar",
+                "+",
+                "1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "HP",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "Charge_Bar",
+                "+",
+                "1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "HP",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "Charge_Bar",
+                "+",
+                "1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "HP",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "Charge_Bar",
+                "+",
+                "1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "AsteroidSmall",
+                "HP",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "Charge_Bar",
+                "+",
+                "1",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -3265,6 +4536,16 @@
                 },
                 {
                   "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_1_",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ScalableCapability::ScalableBehavior::SetValue"
                   },
                   "parameters": [
@@ -3312,6 +4593,16 @@
                     "RandomInRange(0,1200)",
                     "770",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_1_",
+                    "=",
+                    "3"
                   ]
                 },
                 {
@@ -3367,6 +4658,16 @@
                 },
                 {
                   "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_1_",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ScalableCapability::ScalableBehavior::SetValue"
                   },
                   "parameters": [
@@ -3414,6 +4715,16 @@
                     "1330",
                     "RandomInRange(0,720)",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_1_",
+                    "=",
+                    "3"
                   ]
                 },
                 {
@@ -3472,7 +4783,19 @@
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Stun",
+                "=",
+                "0"
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
@@ -3611,6 +4934,16 @@
                 },
                 {
                   "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_2_",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ScalableCapability::ScalableBehavior::SetValue"
                   },
                   "parameters": [
@@ -3658,6 +4991,16 @@
                     "RandomInRange(0,1200)",
                     "770",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_2_",
+                    "=",
+                    "3"
                   ]
                 },
                 {
@@ -3713,6 +5056,16 @@
                 },
                 {
                   "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_2_",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ScalableCapability::ScalableBehavior::SetValue"
                   },
                   "parameters": [
@@ -3760,6 +5113,16 @@
                     "1330",
                     "RandomInRange(0,720)",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "Monster__level_2_",
+                    "=",
+                    "3"
                   ]
                 },
                 {
@@ -3818,7 +5181,19 @@
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Stun",
+                "=",
+                "0"
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
@@ -3883,6 +5258,192 @@
               "parameters": [
                 "Monster__level_2_",
                 ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Heating Effect and Stop (Timer)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"StunTimer\"",
+                ">",
+                "0.11"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Stun",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"StunTimer\"",
+                ">",
+                "0.11"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Stun",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "\"HitFlashTimer\"",
+                ">",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidMedium",
+                "Animation",
+                "=",
+                "\"normal\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "\"HitFlashTimer\"",
+                ">",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "AsteroidLarge",
+                "Animation",
+                "=",
+                "\"normal\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "\"HitFlashTimer\"",
+                ">",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_1_",
+                "Animation",
+                "=",
+                "\"Normal\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "\"HitFlashTimer\"",
+                ">",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Monster__level_2_",
+                "Animation",
+                "=",
+                "\"Normal2\""
               ]
             }
           ]
@@ -3972,8 +5533,25 @@
       "type": "FlippableCapability::FlippableBehavior"
     },
     {
+      "name": "MaxMovementSpeed_Physics",
+      "type": "SpeedRestrictions::MaxMovementSpeed_Physics"
+    },
+    {
+      "name": "MaxRotationSpeed_Physics",
+      "type": "SpeedRestrictions::MaxRotationSpeed_Physics"
+    },
+    {
       "name": "Opacity",
       "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
+      "name": "Physics2",
+      "type": "Physics2::Physics2Behavior",
+      "gravityX": 0,
+      "gravityY": 9.8,
+      "worldScale": 100,
+      "scaleX": 100,
+      "scaleY": 100
     },
     {
       "name": "Resizable",

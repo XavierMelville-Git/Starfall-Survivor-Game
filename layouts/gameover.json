@@ -29,17 +29,34 @@
   "variables": [],
   "instances": [
     {
-      "angle": 0,
+      "angle": 353,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "Game_Over",
-      "persistentUuid": "211bdcc2-dc57-4cb6-a21d-cce17c4b3bfe",
+      "name": "GameOver",
+      "persistentUuid": "aea5d2b4-cf32-4711-8140-e1ce90a66b28",
       "width": 0,
-      "x": 339,
-      "y": 278,
+      "x": 313,
+      "y": 245,
       "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 66,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Press_Any_Key",
+      "persistentUuid": "6750c24f-5dea-4073-9175-b09214badfe8",
+      "width": 537,
+      "x": 384,
+      "y": 521,
+      "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -50,21 +67,37 @@
       "assetStoreId": "",
       "bold": true,
       "italic": false,
-      "name": "Game_Over",
+      "name": "GameOver",
+      "persistentUuid": "7f301453-f9cb-49a8-94db-456225af593a",
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "RGBSplit",
+          "name": "Effect",
+          "doubleParameters": {
+            "blueX": 0,
+            "blueY": 7,
+            "greenX": 0,
+            "greenY": 0,
+            "redX": 6,
+            "redY": 2
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "string": "Game Over",
-      "font": "",
+      "font": "349e61a855adefea40c789fda27ec8fb8664af49c28d6495da8a56dba40c3704_PTSans-Bold.ttf",
       "textAlignment": "center",
       "characterSize": 120,
       "color": {
-        "b": 7,
-        "g": 7,
-        "r": 243
+        "b": 255,
+        "g": 255,
+        "r": 255
       },
       "content": {
         "bold": true,
@@ -81,12 +114,72 @@
         "smoothed": true,
         "underlined": false,
         "text": "Game Over",
-        "font": "",
+        "font": "349e61a855adefea40c789fda27ec8fb8664af49c28d6495da8a56dba40c3704_PTSans-Bold.ttf",
         "textAlignment": "center",
         "verticalTextAlignment": "top",
         "characterSize": 120,
         "lineHeight": 0,
-        "color": "243;7;7"
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Press_Any_Key",
+      "persistentUuid": "d2748f3e-53b0-4f6a-9376-900364e32fc8",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "FlashOpacity",
+          "type": "Flash::FlashOpacity",
+          "Opacity": "Opacity",
+          "TweenBehavior": "Tween",
+          "HalfPeriodTime": 0.8,
+          "IsFlashing": false,
+          "FlashDuration": 0,
+          "TargetOpacity": 0,
+          "StartingOpacity": 2.0247e-320
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Press any key to continue",
+      "font": "349e61a855adefea40c789fda27ec8fb8664af49c28d6495da8a56dba40c3704_PTSans-Bold.ttf",
+      "textAlignment": "center",
+      "characterSize": 40,
+      "color": {
+        "b": 143,
+        "g": 143,
+        "r": 143
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Press any key to continue",
+        "font": "349e61a855adefea40c789fda27ec8fb8664af49c28d6495da8a56dba40c3704_PTSans-Bold.ttf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "top",
+        "characterSize": 40,
+        "lineHeight": 0,
+        "color": "143;143;143"
       }
     }
   ],
@@ -94,7 +187,10 @@
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "Game_Over"
+        "objectName": "GameOver"
+      },
+      {
+        "objectName": "Press_Any_Key"
       }
     ]
   },
@@ -118,7 +214,20 @@
           },
           "parameters": [
             "",
-            "\"Timer\""
+            "\"delay\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Flash::FlashOpacity::Flash"
+          },
+          "parameters": [
+            "Press_Any_Key",
+            "FlashOpacity",
+            "Tween",
+            "0",
+            "0",
+            ""
           ]
         }
       ]
@@ -132,9 +241,17 @@
           },
           "parameters": [
             "",
-            "\"Timer\"",
+            "\"delay\"",
             ">",
-            "3"
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "AnyKeyReleased"
+          },
+          "parameters": [
+            ""
           ]
         }
       ],
@@ -225,6 +342,10 @@
       "type": "EffectCapability::EffectBehavior"
     },
     {
+      "name": "FlashOpacity",
+      "type": "Flash::FlashOpacity"
+    },
+    {
       "name": "Opacity",
       "type": "OpacityCapability::OpacityBehavior"
     },
@@ -235,6 +356,10 @@
     {
       "name": "Text",
       "type": "TextContainerCapability::TextContainerBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
     }
   ]
 }
